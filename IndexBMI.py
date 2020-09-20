@@ -3,4 +3,5 @@ rost = float(input('Какой у Вас рост в метрах? '))
 bmi = round(ves / (rost**2))
 print('Ваш индекс массы тела: ', bmi)
 a = bmi - 20
-scale = "20" + "="*a + str(bmi) + "="*(30-a) + "50"
+scale = "20" + "="*a + str(bmi) + "="*(30 - a) + "50"
+print(scale)
