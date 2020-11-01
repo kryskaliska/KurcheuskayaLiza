@@ -25,7 +25,7 @@ SECRET_KEY = 'dsq3)%5e#y^z!g$qq@80ezlejz8rs5sn==my&+f^1u^e^-p%wn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kurch.pythonanywhere.com', '127.0.0.1',]
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hello_world',
+    'book_shop',
 ]
 
 MIDDLEWARE = [
