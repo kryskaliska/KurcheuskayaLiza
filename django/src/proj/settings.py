@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+import sqlite3
+from dotenv import load_dotenv
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +24,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'dsq3)%5e#y^z!g$qq@80ezlejz8rs5sn==my&+f^1u^e^-p%wn'
+conn = sqlite3.connect('secret.db')
+load_dotenv()
+SECRET_KEY = os.environ.get('DB_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = ['kurch.pythonanywhere.com',]
+=======
+ALLOWED_HOSTS = ['kurch.pythonanywhere.com', '127.0.0.1',]
+>>>>>>> ee010bf871a6f2ec9c8fd56e0b99fd92f8a12071
 
 
 # Application definition
@@ -38,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'hello_world',
+    'book_shop',
 ]
 
 MIDDLEWARE = [
