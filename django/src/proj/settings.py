@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-conn = sqlite3.connect('secret.db')
+#conn = sqlite3.connect('secret.db')
 load_dotenv()
 SECRET_KEY = os.environ.get('DB_SECRET_KEY')
 
