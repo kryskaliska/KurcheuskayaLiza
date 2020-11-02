@@ -25,7 +25,7 @@ SECRET_KEY = 'dsq3)%5e#y^z!g$qq@80ezlejz8rs5sn==my&+f^1u^e^-p%wn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kurch.pythonanywhere.com',]
 
 
 # Application definition
@@ -119,3 +119,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/kurch/KurcheuskayaLiza/django/static'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = '/home/kurch/KurcheuskayaLiza/django/media'
+
+
