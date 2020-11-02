@@ -31,7 +31,11 @@ SECRET_KEY = os.environ.get('DB_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
+ALLOWED_HOSTS = ['kurch.pythonanywhere.com',]
+=======
 ALLOWED_HOSTS = ['kurch.pythonanywhere.com', '127.0.0.1',]
+>>>>>>> ee010bf871a6f2ec9c8fd56e0b99fd92f8a12071
 
 
 # Application definition
@@ -128,4 +132,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = '/home/kurch/KurcheuskayaLiza/django/static'
 MEDIA_URL = '/media/'
+<<<<<<< HEAD
 MEDIA_ROOT = '/home/kurch/KurcheuskayaLiza/django/media'
+
+
+=======
+MEDIA_ROOT = '/home/kurch/KurcheuskayaLiza/django/media'
+>>>>>>> 6a2ebd5536846dd451ca973d0721a531690c16eb
