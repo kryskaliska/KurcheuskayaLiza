@@ -132,6 +132,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = '/home/kurch/KurcheuskayaLiza/django/static'
 MEDIA_URL = '/media/'
+<<<<<<< HEAD
 MEDIA_ROOT = '/home/kurch/KurcheuskayaLiza/django/media'
 
 
+=======
+MEDIA_ROOT = '/home/kurch/KurcheuskayaLiza/django/media'
+>>>>>>> 6a2ebd5536846dd451ca973d0721a531690c16eb
