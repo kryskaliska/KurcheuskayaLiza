@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class BookShopConfig(AppConfig):
-    name = 'book_shop'
+    name = 'book_shop_ref'

@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('book_shop', '0002_book'),
+        ('book_shop_ref', '0002_book'),
     ]
 
     operations = [
@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='book',
             name='author',
-            field=models.ManyToManyField(to='book_shop.Author', verbose_name='Автор(ы)'),
+            field=models.ManyToManyField(to='book_shop_ref.Author', verbose_name='Автор(ы)'),
         ),
         migrations.RemoveField(
             model_name='book',
@@ -31,6 +31,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='book',
             name='publishing_house',
-            field=models.ManyToManyField(to='book_shop.PublishingHouse', verbose_name='Издательство'),
+            field=models.ManyToManyField(to='book_shop_ref.PublishingHouse', verbose_name='Издательство'),
         ),
     ]

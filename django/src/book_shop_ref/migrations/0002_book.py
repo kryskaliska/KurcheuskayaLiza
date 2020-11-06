@@ -7,7 +7,7 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('book_shop', '0001_initial'),
+        ('book_shop_ref', '0001_initial'),
     ]
 
     operations = [
@@ -23,10 +23,10 @@ class Migration(migrations.Migration):
                 ('updated', models.DateTimeField(auto_now=True, verbose_name='Дата изменения')),
                 ('description', models.TextField(blank=True, null=True, verbose_name='Описание')),
                 ('num_of_pages', models.PositiveIntegerField(verbose_name='Количество страниц')),
-                ('author', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='book_shop.author', verbose_name='Автор')),
-                ('genres', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='book_shop.genres', verbose_name='Жанр')),
-                ('publishing_house', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='book_shop.publishinghouse', verbose_name='Издательство')),
-                ('series', models.ForeignKey(default=True, on_delete=django.db.models.deletion.PROTECT, to='book_shop.series', verbose_name='Название серии')),
+                ('author', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='book_shop_ref.author', verbose_name='Автор')),
+                ('genres', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='book_shop_ref.genres', verbose_name='Жанр')),
+                ('publishing_house', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='book_shop_ref.publishinghouse', verbose_name='Издательство')),
+                ('series', models.ForeignKey(default=True, on_delete=django.db.models.deletion.PROTECT, to='book_shop_ref.series', verbose_name='Название серии')),
             ],
         ),
     ]

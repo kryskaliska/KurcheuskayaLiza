@@ -61,7 +61,7 @@ class Book(models.Model):
         decimal_places=2
     )
     author = models.ManyToManyField(
-        'book_shop.Author',
+        'book_shop_ref.Author',
         verbose_name='Автор(ы)'
     )
     series = models.ForeignKey(
@@ -76,7 +76,7 @@ class Book(models.Model):
         verbose_name='Жанр'
     )
     publishing_house = models.ManyToManyField(
-        'book_shop.PublishingHouse',
+        'book_shop_ref.PublishingHouse',
         verbose_name='Издательство'
     )
     #year_of_publishing =
