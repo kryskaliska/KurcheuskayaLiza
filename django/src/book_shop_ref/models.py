@@ -68,12 +68,14 @@ class Book(models.Model):
         Series,
         on_delete=models.PROTECT,
         verbose_name='Название серии',
-        default=True
+        default=True,
+        related_name='books'
     )
     genres = models.ForeignKey(
         Genres,
         on_delete=models.PROTECT,
-        verbose_name='Жанр'
+        verbose_name='Жанр',
+        related_name='books'
     )
     publishing_house = models.ManyToManyField(
         'book_shop_ref.PublishingHouse',
