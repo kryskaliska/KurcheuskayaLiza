@@ -30,6 +30,13 @@ class Book(models.Model):
     stock = models.PositiveIntegerField(
         verbose_name='Количество в наличии'
     )
+    age = models.ForeignKey(
+        'book_shop_ref.Age',
+        on_delete=models.PROTECT,
+        verbose_name='Возрастные ограничения',
+        default='5',
+        related_name='books'
+    )
     series = models.ForeignKey(
         'book_shop_ref.Series',
         on_delete=models.PROTECT,
@@ -46,11 +53,13 @@ class Book(models.Model):
     num_of_pages = models.PositiveIntegerField(
         verbose_name='Количество страниц'
     )
-    book_format = models.ForeignKey(
+    book_format = models.ManyToManyField(
         'book_shop_ref.Format',
-        on_delete=models.PROTECT,
-        verbose_name='Формат книги',
-        related_name='books'
+        verbose_name='Формат книги'
+    )
+    type_binding = models.ManyToManyField(
+        'book_shop_ref.Binding',
+        verbose_name='Тип переплёта'
     )
     publishing_house = models.ManyToManyField(
         'book_shop_ref.PublishingHouse',
@@ -59,6 +68,12 @@ class Book(models.Model):
     year_of_publishing = models.ManyToManyField(
         'book_shop_ref.YearPublishing',
         verbose_name='Год издания'
+    )
+    isbn = models.CharField(
+        verbose_name='ISBN',
+        max_length=15,
+        default='',
+        unique=True
     )
     created = models.DateTimeField(
         verbose_name='Дата внесения',
@@ -76,4 +91,5 @@ class Book(models.Model):
     
     
     def __str__(self):
-        return f'{self.name} {self.author.name} {self.series.name} {self.genres.name} {self.publishing_house.name} {self.num_of_pages} {self.book_format} {self.year_of_publishing}'
+       # return f'Название книги: {self.name}, aвтор(ы): {self.author.name}, цена(BYN): {self.price}, возрастные ограничения: {self.age}, название серии: {self.series.name}, жанр: {self.genres.name},  количество страниц: {self.num_of_pages}, город: {self.publishing_house.city}, издательство: {self.publishing_house.name}, год издания: {self.year_of_publishing}, формат: {self.book_format}, '
+       return self.name
