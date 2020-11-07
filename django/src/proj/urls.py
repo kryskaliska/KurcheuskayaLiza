@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import include, path
 from hello_world.views import hello_world
 #from book_shop_ref.views import book_shop_ref
+#from book.views import book
 urlpatterns = [
     path('', admin.site.urls),
     path('hello_world/', include('hello_world.urls')),
     #path('', include('hello_world.urls')),
+    #path('', include('book')),
     #path('book_shop_ref/', include('book_shop_ref.urls')),
 ]
