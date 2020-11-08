@@ -34,6 +34,15 @@ DEBUG = True
 ALLOWED_HOSTS = ['kurch.pythonanywhere.com', '127.0.0.1',]
 
 # Application definition
+MY_APPS = [
+    'hello_world',
+    'book_shop_ref',
+    'book'
+]
+
+THIRD_PARTY_APPS = [
+
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -42,10 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'hello_world',
-    'book_shop_ref',
-    'book'
-]
+    
+] + MY_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

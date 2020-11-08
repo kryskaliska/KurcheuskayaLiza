@@ -1,5 +1,5 @@
 from django.db import models
-from book_shop_ref.models import Series, Genres, YearPublishing, Format
+from book_shop_ref.models import Series, Genres, YearPublishing, Format, PublishingHouse, Author # Binding #Age
 
 # Create your models here.
 
@@ -30,25 +30,25 @@ class Book(models.Model):
     stock = models.PositiveIntegerField(
         verbose_name='Количество в наличии'
     )
-    age = models.ForeignKey(
-        'book_shop_ref.Age',
-        on_delete=models.PROTECT,
-        verbose_name='Возрастные ограничения',
-        default='5',
-        related_name='books'
-    )
+    #age = models.ForeignKey(
+    #    'book_shop_ref.Age',
+    #    on_delete=models.PROTECT,
+    #    verbose_name='Возрастные ограничения',
+    #    default='5',
+    #    related_name='books'
+    #)
     series = models.ForeignKey(
         'book_shop_ref.Series',
         on_delete=models.PROTECT,
         verbose_name='Название серии',
         default=True,
-        related_name='books'
+        related_name='books',
+        blank=True,
+        null=True
     )
-    genres = models.ForeignKey(
+    genres = models.ManyToManyField(
         'book_shop_ref.Genres',
-        on_delete=models.PROTECT,
-        verbose_name='Жанр',
-        related_name='books'
+        verbose_name='Жанр'
     )
     num_of_pages = models.PositiveIntegerField(
         verbose_name='Количество страниц'
@@ -57,14 +57,21 @@ class Book(models.Model):
         'book_shop_ref.Format',
         verbose_name='Формат книги'
     )
-    type_binding = models.ManyToManyField(
-        'book_shop_ref.Binding',
-        verbose_name='Тип переплёта'
-    )
+    #type_binding = models.ManyToManyField(
+    #    'book_shop_ref.Binding',
+    #    verbose_name='Тип переплёта'
+    #)
     publishing_house = models.ManyToManyField(
         'book_shop_ref.PublishingHouse',
         verbose_name='Издательство'
     )
+    #city = models.ForeignKey(
+    #    'book_shop_ref.City',
+    #    on_delete=models.PROTECT,
+    #    verbose_name='Город',
+    #    related_name='publishing_houses',
+    #    default=''
+    #)
     year_of_publishing = models.ManyToManyField(
         'book_shop_ref.YearPublishing',
         verbose_name='Год издания'
