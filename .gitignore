@@ -94,3 +94,5 @@ dmypy.json
 .pytype/
 # Cython debug symbols
 cython_debug/
+#my Files
+my_local_settings.py
